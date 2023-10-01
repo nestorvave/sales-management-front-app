@@ -19,7 +19,7 @@ export default function CreateProductPage() {
   const { data: dt } = useQuery({
     queryKey: ["createProduct"],
     queryFn: async () => {
-      const data = await axios.get("http://localhost:4000/api/v1/products");
+      const data = await axios.get("/products");
     },
   });
   console.log(dt);
