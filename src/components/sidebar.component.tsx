@@ -29,6 +29,7 @@ export const Sidebar = () => {
               icon={icon}
               expanded={sidebarOpen}
               path={path}
+              key={`${path}-${text}`}
             />
           ))}
         </ul>

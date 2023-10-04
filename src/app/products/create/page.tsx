@@ -6,6 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { Button } from "@/components/button-component";
 import TextInput from "@/components/text-input.component";
+import { axiosClient } from "@/api/axios-instance.api";
 
 export default function CreateProductPage() {
   const createForm: ICreate = {
@@ -19,7 +20,7 @@ export default function CreateProductPage() {
   const { data: dt } = useQuery({
     queryKey: ["createProduct"],
     queryFn: async () => {
-      const data = await axios.get("/products");
+      const data = await axiosClient.get("/products");
     },
   });
   console.log(dt);
